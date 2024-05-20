@@ -13,7 +13,7 @@ There will be a following module where you need to input something in order for 
     -In which the back-end challenge of this exam
 
 OPTIONAL or other ways to run:
-You may use the .exe file here located under PyInstaller Build but this is built upon the PyInstaller package via pip in which I don't know what sort of content it may produce since python packages is not the field of my expertise
+You may use the Pyinstaller command if that is available for you. It is something like a package in pip. However, content it may produce is not known to mine too since python packages is not my field of expertise
 
 You may also use the "run.bat" to run the python program in your console
 
