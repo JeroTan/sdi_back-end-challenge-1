@@ -29,7 +29,7 @@ while seats == False:
 
 #define the algorithm
 def lookForLowestCost(remainingSeats):
-    #print("%d " % (remainingSeats), end="")
+    # print(".", end="")
     preferredCar = False #Initiate Preferred car
 
     #Select the Highest Seat Car since it is the least expensive. With this we will know the threshold of the data so that we can recurse again to calculate the data
@@ -80,27 +80,35 @@ def lookForLowestCost(remainingSeats):
 
 #run the algorithm
 
-print("processing", end="")
-result = lookForLowestCost(seats)
-print("")
-print("Here is the result:")
-print(result)
+print("processing. . .")
 
-print("For your '%d' seat(s), you may avail the following: " %(seats))
-cost = 0
-i = 0
-totalCapacity = 0
-for props in result:
-    if i != 0:
-        print(" + ")
-    data = result[props]
-    print("%s x %d" %(props, data["total"]), end="")
-    i = i + 1
-    #compute the total cost along the way
-    cost = cost + data["cost"]*data["total"]
-    #... and also the total capacity of seats 
-    totalCapacity = totalCapacity + data["total"]*data["seat"]
-print("")
-print("Which cost Php %d" %(cost), end="")
-if totalCapacity > seats:
-    print(", with additional %d seat(s) allowance" %(totalCapacity-seats))
+try:
+    result = lookForLowestCost(seats)
+    print("")
+    print("Here's the result:")
+
+    print("For your '%d' seat(s), you may avail the following: " %(seats))
+    cost = 0
+    i = 0
+    totalCapacity = 0
+    for props in result:
+        if i != 0:
+            print(" and ", end="")
+        data = result[props]
+        print("%s x %d" %(props, data["total"]), end="")
+        i = i + 1
+        #compute the total cost along the way
+        cost = cost + data["cost"]*data["total"]
+        #... and also the total capacity of seats 
+        totalCapacity = totalCapacity + data["total"]*data["seat"]
+
+    print("")
+    print("Which cost Php %d" %(cost), end="")
+    if totalCapacity > seats:
+        print(", with additional %d seat(s) allowance" %(totalCapacity-seats))
+
+    print("")
+    ex = input("Press enter to exit: ")
+
+except:
+    print("Maximum seat limit reached")
