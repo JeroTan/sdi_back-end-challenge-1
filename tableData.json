@@ -1,0 +1,5 @@
+{"carRentalTable":[
+    {"size":"S", "seat":"5", "cost":5000},
+    {"size":"M", "seat":"10", "cost":8000},
+    {"size":"L", "seat":"15", "cost":12000}
+]}
